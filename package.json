@@ -5,14 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-<<<<<<< HEAD
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint . --max-warnings=0"
-=======
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 5d8117c18263ac0c96d8954c52c5c48871223872
   },
   "author": "",
   "license": "ISC",

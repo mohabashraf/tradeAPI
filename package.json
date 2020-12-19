@@ -13,6 +13,9 @@
   "dependencies": {
     "async-mqtt": "^2.6.1",
     "body-parser": "^1.19.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "express": "^4.17.1",
     "flatted": "^3.1.0",
     "flatten": "^1.0.3",
     "mongoose": "^5.11.8",
@@ -20,9 +23,7 @@
     "node-cron": "^2.0.3",
     "nodemon": "^2.0.6",
     "redis": "^3.0.2",
-    "redis-client": "^0.3.5",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.16.0"
+    "redis-client": "^0.3.5"
   },
   "devDependencies": {
     "eslint": "^7.16.0",

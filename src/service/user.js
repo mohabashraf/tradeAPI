@@ -8,14 +8,12 @@ const populateUser = () => {
 
 const deposit = async (userId, amount) => {
     try {
-        console.log("Before adding user balance")
-      await userModel.addAmount(userId, amount)
-      console.log("After adding user balance")
-
-      return 200
-    } catch (err) {
-      throw err
-    }
+      const user = await getUser(userId)
+      await userModel.updateBalance(userId, user.balance + amount)
+      return true
+      } catch (err) {
+        throw err
+      }
   };
   
   const stockExhange = async (userId, stock_id, total, upper_bound, lower_bound, type) =>{
@@ -56,10 +54,10 @@ const deposit = async (userId, amount) => {
   const withDraw = async (userId, amount) => {
     try {
         console.log("Before adding user balance")
-      await userModel.withDrawFromBalance(userId, amount)
-      console.log("After adding user balance")
-
-      return 200
+        const user = await getUser(userId)
+        await userModel.updateBalance(userId, user.balance-amount)
+        console.log("After adding user balance")
+         return true
     } catch (err) {
       throw err
     }

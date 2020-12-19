@@ -8,9 +8,8 @@ require('../config/mongooseConnection')
 
 router.post('/deposit', async (req, res, next) => {
   try {
-    console.log("Calling add deposit to user endpoint")
-    console.log(`the bode of the request is ${JSON.stringify(req.body)}`)
-    const userId = req.body.userId
+    console.log("Consuming add deposit to user endpoint")
+    const userId = req.body.user_Id
     const amount = req.body.amount
     console.log(`Adding ${amount} to user with id equals ${userId}`)
     await userService.deposit(userId, amount);

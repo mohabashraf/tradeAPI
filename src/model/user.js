@@ -29,8 +29,7 @@ const getUser = async (userId) => {
         return user
     }catch(err){
         throw err
-    }
-    
+    }  
 }
 
 const updateBalance = async (userId, balance) => {

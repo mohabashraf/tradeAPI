@@ -27,7 +27,7 @@ client.on('message', function (topic, message) {
     }
   });
 
-  cron.schedule('0 0 * */1 * *', () => {
+  cron.schedule('0 0 0 */1 * *', () => {
     if (stocks[stock.stock_id] !== undefined){
       stocks[stock.stock_id]["highestPriceWithInDay"] = 0
       stocks[stock.stock_id]["lowestPriceWithInDay"] = Number.MAX_SAFE_INTEGER

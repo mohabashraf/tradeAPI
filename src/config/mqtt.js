@@ -8,9 +8,7 @@ let highestPriceWithInDay
 let lowestPriceWithInDay      
 const cron = require('node-cron');
  
-// cron.schedule('* * * * *', () => {
-//   console.log('running a task every minute');
-// });
+
 client.on('connect', function () {
   client.subscribe('thndr-trading', (err) => {
     console.log(err)

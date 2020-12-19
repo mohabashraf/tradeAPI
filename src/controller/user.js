@@ -44,7 +44,7 @@ router.post('/withdraw', async (req, res, next) => {
       const upper_bound = req.body.upper_bound
       const lower_bound = req.body.lower_bound
       await userService.stockExhange(userId, stock_id, total, upper_bound, lower_bound, "Buy");
-      res.status(200).json("done")
+      res.status(200).json("Done")
     } catch (err) {
       res.status(500).json(err.message)
     }

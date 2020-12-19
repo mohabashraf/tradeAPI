@@ -9,14 +9,12 @@ require('../config/mongooseConnection')
 router.post('/deposit', async (req, res, next) => {
   try {
     console.log("Consuming add deposit to user endpoint")
-    const userId = req.body.user_Id
+    const userId = req.body.user_id
     const amount = req.body.amount
     console.log(`Adding ${amount} to user with id equals ${userId}`)
     await userService.deposit(userId, amount);
-    const user = await userService.getUser(userId)
-    res.status(200).json(user.userId + user.balance)
+    res.status(200).json("Done")
   } catch (err) {
-    console.log("errors")   
     res.status(500).json(err.message)
   }
 });
@@ -25,12 +23,11 @@ router.post('/withdraw', async (req, res, next) => {
   try {
     console.log("Calling the withdraw endpoint ")
     console.log(`the bode of the request is ${JSON.stringify(req.body)}`)
-    const userId = req.body.userId
+    const userId = req.body.user_id
     const amount = req.body.amount
     console.log(`Adding ${amount} to user with id equals ${userId}`)
     await userService.withDraw(userId, amount);
-    const user = await userService.getUser(userId)
-    res.status(200).json(user.userId + user.balance)
+    res.status(200).json(`Done`)
   } catch (err) {
     console.log("errors")   
     res.status(500).json(err.message)
@@ -49,7 +46,6 @@ router.post('/withdraw', async (req, res, next) => {
       await userService.stockExhange(userId, stock_id, total, upper_bound, lower_bound, "Buy");
       res.status(200).json("done")
     } catch (err) {
-      console.log("errors")   
       res.status(500).json(err.message)
     }
     });

@@ -43,7 +43,6 @@ const deposit = async (userId, amount) => {
         console.log("Before adding user balance")
       const user = await userModel.getUser(userId)
       console.log("After adding user balance")
-
       return user
     } catch (err) {
       throw err

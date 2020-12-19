@@ -43,8 +43,7 @@ const updateBalance = async (userId, balance) => {
             }
             console.log(`The response after updating using account res ${res}`)
         });
-        console.log("exit")
-        return
+        return true
     }catch(err){
         throw new Error("Failed to update user")
     }
